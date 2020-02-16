@@ -1,0 +1,12 @@
+if "testfile.txt.a" in listfiles():
+	removefile("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+	removefile("testfile.txt.b")
+
+# Open File Function Call
+try:
+	myfile=ABopenfile("testfile.txt",False)  #create A/B files with create flag set to false
+except:
+	log("Cannot create file handle!")
+
+myfile.close()

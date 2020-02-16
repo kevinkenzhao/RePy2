@@ -1,0 +1,20 @@
+if "testfile.txt.a" in listfiles():
+	removefile("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+	removefile("testfile.txt.b")
+
+myfile=ABopenfile("testfile.txt",True)  #Create an AB file
+
+myfile.writeat("SThe quick brown fox jumps over the lazy dogE",0)
+
+bool = 0
+
+try:
+	myfile.readat(1000,0)
+except RepyArgumentError:
+	bool+=1
+
+if bool == 0:
+	log("File was permitted to be read past EOF!")
+
+myfile.close()

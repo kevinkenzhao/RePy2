@@ -1,0 +1,22 @@
+if "ABC.txt.a" in listfiles():
+	removefile("testfile.txt.a")
+if "ABC.txt.b" in listfiles():
+	removefile("testfile.txt.b")
+
+# Open File Function Call
+
+try:
+	myfile=ABopenfile("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt",True)
+	myfile.close()
+except:
+	log("Failed to open allowed filename!")
+	myfile.close()
+
+myfile=ABopenfile("ABC.txt",True)
+myfile.close()
+myfile=ABopenfile("britishairẉays.txt",True)
+myfile.close()
+myfile=ABopenfile("test file.txt",True)
+myfile.close()
+myfile=ABopenfile("testfile@.txt",True)
+myfile.close()

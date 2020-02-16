@@ -1,0 +1,22 @@
+def forceClose():
+	sleep(1)
+	exitall()
+
+if "testfile.txt.a" in listfiles():
+	removefile("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+	removefile("testfile.txt.b")
+
+myfile=ABopenfile("testfile.txt",True)
+log("Chicken!")
+
+myfile.writeat("SSomeStringE",0)
+
+try:
+	assert('SE' == myfile.readat(None,0)) # testfile.txt.a should have "SE" as it was newly created
+except:
+	log("Backup file does not read 'SE'!")
+
+myfile.close()
+
+createthread(forceClose())
